@@ -1,116 +1,52 @@
 import React from "react";
-import { TiHomeOutline } from "react-icons/ti";
-import { CgProfile } from "react-icons/cg";
-import { GiShadowFollower } from "react-icons/gi";
-import { FaRegNewspaper } from "react-icons/fa6";
-
-const Dashboard = () => {
-  const navItem = [
-    {
-      id: 1,
-      label: "Home",
-      icons: <TiHomeOutline />,
-    },
-    {
-      id: 2,
-      label: "Profile",
-      icons: <CgProfile />,
-    },
-    {
-      id: 3,
-      label: "Followers",
-      icons: <GiShadowFollower />,
-    },
-    {
-      id: 4,
-      label: "News",
-      icons: <FaRegNewspaper />,
-    },
-  ];
-
+import { item } from "./SideBarItems";
+import { BsTwitter } from "react-icons/bs";
+import { CiSearch } from "react-icons/ci";
+const TwitterPage = () => {
   return (
-    // <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-black items-center gap-1 min-h-[1000px] ">
-    //   <div className="flex justify-center items-center h-full bg-slate-300 sm:grid-cols-2">1</div>
-    //   <div className="flex justify-center items-center h-full bg-pink-600 sm:grid-cols-2">2</div>
-    //   <div className="flex justify-center items-center h-full bg-red-500 sm:grid-cols-2">3</div>
-    //   <div className="flex justify-center items-center h-full bg-cyan-500 sm:grid-cols-2">4</div>
-    //   <div className="flex justify-center items-center h-full bg-cyan-200 sm:grid-cols-2">5</div>
-    //   <div className="flex justify-center items-center h-full bg-rose-800 sm:grid-cols-2">6</div>
-    // </div>
+    <div className="grid grid-cols-12 text-white h-[1000px] bg-[#000000]">
+      <div className="col-span-3 flex justify-self-end pr-14  sm:pr-16 m-1  border-r-[1px] border-neutral-700 flex-shrink-0 sm:block  hidden ">
+        <div className="text-2xl h-fit w-fit hover:bg-gray-800 rounded-full p-3 cursor-pointer transition-all mt-11">
+          <BsTwitter />
+        </div>
 
-    // <div className="grid gap-1 sm:grid-cols-2 grid-cols-2 text-center ">
-    //   <div className="min-h-[100px] rounded-md  bg-orange-500 shadow">1</div>
-    //   <div className="min-h-[100px] rounded-md bg-teal-500 shadow">2</div>
-    // </div>
-
-    // <div className="grid gap-1 sm:grid-cols-3  text-center grid-cols-2 md:grid-cols-4 ">
-    //   <div className="min-h-[100px] rounded-md  bg-orange-500 shadow">1</div>
-    //   <div className="min-h-[100px] rounded-md bg-teal-500 shadow">2</div>
-    //   <div className="min-h-[100px] rounded-md bg-cyan-200 shadow">3</div>
-    //   <div className="min-h-[100px] rounded-md bg-purple-800 shadow">4</div>
-    // </div>
-
-    //   <div className="grid gap-1 sm:grid-cols-12  grid-cols-1">
-
-    //   <div className="min-h-[100px] rounded-md  bg-orange-500 shadow sm:col-span-2 md:col-span-4 lg:col-span-5">1</div>
-    //   <div className="min-h-[100px] rounded-md bg-teal-500 shadow sm:col-span-10 md:col-span-8 lg:col-span-7">2</div>
-    // </div>
-
-    //   <div className="grid gap-1 grid-cols-3 sm:grid-cols-12">
-    //   <div className="min-h-[100px] rounded-md  bg-orange-500 shadow sm:col-span-2 md:col-span-3">1</div>
-    //   <div className="min-h-[100px] rounded-md bg-teal-500 shadow sm:col-span-8 md:col-span-9 lg:col-span-6">2</div>
-    //   <div className="min-h-[100px] rounded-md bg-purple-800 shadow  sm:col-span-2 md:col-span-3 sm:block md:hidden hidden">3</div>
-    // </div>
-
-    <div className="grid gap-x-1 gap-1 grid-cols-12">
-      <div className="min-h-[1000px] rounded-md  bg-orange-500  shadow sm:col-span-3  md:col-span-4 xl:col-span-2 hidden md:block">
-        1
+        {item.map((item) => (
+          <>
+            <div className="flex justify-start mt-6 font-thin ">
+              <div className="flex justify-start gap-4 px-3 py-2 hover:bg-[#181818] transition rounded-full hover:cursor-pointer">
+                <p className="text-[28px] ">{item.icon}</p>
+                <p className="text-xl hidden lg:block ">{item.title}</p>
+              </div>
+            </div>
+          </>
+        ))}
+        <button className="bg-[#1A8CD8] w-full rounded-full h-14 text-2xl mt-7 hidden lg:block ">
+          Post
+        </button>
       </div>
-      <div className="min-h-[1000px] rounded-md bg-teal-500 md:col-span-8 xl:col-span-8 col-span-12 p-2 ">
-        <ul className="flex space-x-2 justify-between">
-          <li className="flex flex-col items-center space-y-1 ">
-            <div className="bg-yellow-500 p-1 roundef-full">
-
-            <a href="#" className="bg-white p-1 block  rounded-full">
-              <img className="sm:h-30 sm:w-30 h-15 w-15 md:h-30 md:w-30  rounded-full " src="https://placekitten.com/200/200" alt="kitten" />
-            </a>
-            </div>
-            <a href="kitten">Kitten</a>
-          </li>
-          <li className="flex flex-col items-center space-y-1 ">
-            <div className="bg-yellow-500 p-1 roundef-full">
-
-            <a href="#" className="bg-white p-1 block  rounded-full">
-              <img className="sm:h-30 sm:w-30 h-15 w-15 md:h-30 md:w-30  rounded-full " src="https://placekitten.com/200/200" alt="kitten" />
-            </a>
-            </div>
-            <a href="kitten">Kitten</a>
-          </li>
-          <li className="flex flex-col items-center space-y-1 ">
-            <div className="bg-yellow-500 p-1 roundef-full">
-
-            <a href="#" className="bg-white p-1 block  rounded-full">
-              <img className="sm:h-30 sm:w-30 h-15 w-15 md:h-30 md:w-30  rounded-full " src="https://placekitten.com/200/200" alt="kitten" />
-            </a>
-            </div>
-            <a href="kitten">Kitten</a>
-          </li>
-          <li className="flex flex-col items-center space-y-1 ">
-            <div className="bg-yellow-500 p-1 roundef-full">
-
-            <a href="#" className="bg-white p-1 block  rounded-full">
-              <img className="sm:h-30 sm:w-30 h-15 w-15 md:h-30 md:w-30  rounded-full " src="https://placekitten.com/200/200" alt="kitten" />
-            </a>
-            </div>
-            <a href="kitten">Kitten</a>
-          </li>
-        </ul>
+      <div className="md:col-span-4 ls:col-span-5 flex justify-center  border-r-[1px] border-neutral-700 col-span-7">
+        <h1>Feed Card</h1>
       </div>
-      <div className="min-h-[1000px] rounded-md bg-purple-800 col-span-2 hidden xl:block sm:hidden xl:col-span-2">
-        3
+      <div className="col-span-3 flex justify-end flex-shrink-0 lg:block  hidden p-7">
+        <div>
+          {/* search section  */}
+          <div className="flex bg-[#16181C] justify-start text-neutral-600 py-4 rounded-full px-1">
+            <div className="ml-3">
+              <CiSearch size={30} />
+            </div>
+
+            <p className="ml-4 text-lg">Search</p>
+          </div>
+          {/* premium */}
+          <div className="mt-10 w-full h-[160px] bg-[#16181C] rounded-xl px-4 flex flex-col ">
+            <p className=" text-xl font-bold py-4">Subscribe to Premium</p>
+            <p className="text-sm  text-neutral-200">Subscribe to unlock new features and if eligible, receive a share of ads revenue.</p>
+            <button className="mt-3 bg-[#1A8CD8] w-[140px]  rounded-full h-10 text-sm font-bold">Subscribe</button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default TwitterPage;
